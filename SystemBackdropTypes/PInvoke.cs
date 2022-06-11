@@ -7,21 +7,20 @@ public class PInvoke
 {
     public class ParameterTypes
     {
-        /*
-        [Flags]
-        enum DWM_SYSTEMBACKDROP_TYPE
-        {
-            DWMSBT_MAINWINDOW = 2, // Mica
-            DWMSBT_TRANSIENTWINDOW = 3, // Acrylic
-            DWMSBT_TABBEDWINDOW = 4 // Tabbed
-        }
-        */
-
         [Flags]
         public enum DWMWINDOWATTRIBUTE
         {
             DWMWA_USE_IMMERSIVE_DARK_MODE = 20,
             DWMWA_SYSTEMBACKDROP_TYPE = 38
+        }
+
+        public enum DWMSYSTEMBACKDROPTYPE
+        {
+            DWMSBT_AUTO = 0,        // [Default] Let DWM automatically decide the system-drawn backdrop for this window.
+            DWMSBT_NONE,            // Do not draw any system backdrop.
+            DWMSBT_MAINWINDOW,      // Draw the backdrop material effect corresponding to a long-lived window.
+            DWMSBT_TRANSIENTWINDOW, // Draw the backdrop material effect corresponding to a transient window.
+            DWMSBT_TABBEDWINDOW     // Draw the backdrop material effect corresponding to a window with a tabbed title bar.
         }
 
         [StructLayout(LayoutKind.Sequential)]
