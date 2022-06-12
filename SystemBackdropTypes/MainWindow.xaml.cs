@@ -78,5 +78,8 @@ namespace SystemBackdropTypes
 				DWMWINDOWATTRIBUTE.DWMWA_SYSTEMBACKDROP_TYPE, 
 				flag);
 		}
+
+		private void Grid_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e) => this.DragMove();
+		private void Button_Click(object sender, RoutedEventArgs e) => Application.Current.Shutdown();
 	}
 }

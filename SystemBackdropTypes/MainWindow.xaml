@@ -3,10 +3,10 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		x:Name="WindowRoot"
 		Background="Transparent"
+		AllowsTransparency="True" WindowStyle="None"
 		Title="DWM System Backdrop Type Sample"
 		Width="800" Height="400">
-
-	<Grid>
+	<Grid MouseDown="Grid_MouseDown">
 		<Border VerticalAlignment="Center" HorizontalAlignment="Center"
 				BorderThickness="1" BorderBrush="DarkOrange"
 				Background="Orange">
@@ -23,6 +23,9 @@
 				<CheckBox HorizontalAlignment="Center"
 						  Content="ImmersiveDarkMode"
 						  IsChecked="{Binding ElementName=WindowRoot, Path=IsDark, Mode=TwoWay}"/>
+				<Button Margin="0,20,0,0" HorizontalAlignment="Center"
+						Content="Close"
+						Click="Button_Click"/>
 			</StackPanel>
 		</Border>
 	</Grid>
